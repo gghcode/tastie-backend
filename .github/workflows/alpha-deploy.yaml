@@ -15,11 +15,6 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    env:
-      DB_HOST: ${{ secrets.ALPHA_DB_HOST }}
-      DB_USERNAME: ${{ secrets.ALPHA_DB_USERNAME }}
-      DB_PASSWORD: ${{ secrets.ALPHA_DB_PASSWORD }}
-      DB_DBNAME: ${{ secrets.ALPHA_DB_DBNAME }}
     steps:
       - uses: actions/checkout@v2
         with:
